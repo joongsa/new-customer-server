@@ -28,6 +28,10 @@ repositories {
 	mavenCentral()
 }
 
+bootJar {
+	mainClass = 'org.skcc.team1.tobe.customerserver.NewCustomerServerApplication'
+}
+
 dependencies {
 	implementation project(':util')
 
