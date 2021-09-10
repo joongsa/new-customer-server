@@ -1,0 +1,24 @@
+spring.profiles.include: realdb
+
+server.port: 7002
+server.error.include-message: always
+
+spring.application.name: new-customer
+
+logging:
+  level:
+    root: INFO
+    org.caltech.miniswing: DEBUG
+    com:
+      querydsl:
+        sql: DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+
+---
+spring.profiles: docker
+
+server.port: 8080
