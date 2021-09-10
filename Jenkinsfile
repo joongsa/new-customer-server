@@ -1,21 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Ready'){
-            steps {
-                echo 'Ready'
-            }
+        stage('Git Progress') {
+          steps {
+            git credentialsId: 'jenkinsgit',
+            url: 'https://github.com/joongsa/new-customer-server'
+          }
+        }
 
+
+        stage('Gradle Build') {
+          steps {
+            sh 'gradle clean build -x test -b build-server.gradle'
+          }
         }
-        stage('Build'){
-            steps {
-                echo 'Build Jar'
-            }
-        }
-        stage('Deploy'){
-            steps {
-                echo 'Deploy AwS'
-            }
-        }
+
+
     }
 }
