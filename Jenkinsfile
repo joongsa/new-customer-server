@@ -13,7 +13,7 @@ pipeline {
           steps {
             //sh 'chmod +x gradlew'
             //sh './gradlew build'
-            sh 'gradle clean build -x test -b build.gradle'
+            sh 'gradle clean -b build/build.gradle'
 
           }
         }
