@@ -73,3 +73,14 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
+
+jar {
+	manifest {
+		attributes  'Title': 'My Application', 'Version': version, 'Main-Class': mainClassName
+	}
+	archiveName 'MyApp.jar'
+	dependsOn configurations.runtime
+	from {
+		configurations.compile.collect {it.isDirectory()? it: zipTree(it)}
+	}
+}
