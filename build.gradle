@@ -76,7 +76,7 @@ dependencyManagement {
 
 jar {
 	manifest {
-		attributes  'Title': 'My Application', 'Version': version, 'Main-Class': mainClassName
+		attributes  'Title': 'My Application', 'Version': version, 'Main-Class': group
 	}
 	archiveName 'MyApp.jar'
 	dependsOn configurations.runtime
